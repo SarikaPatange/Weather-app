@@ -1,6 +1,6 @@
 const api = {
-  key: "afaf9f8d48cff6cafd32e23220bcfdbf",
-  baseurl: "https://api.openweathermap.org/data/2.5/"
+  key: "ce45e38d704584b68f24b1132758a855",
+  base: "https://api.openweathermap.org/data/2.5/"
 }
 
 const searchbox = document.querySelector('.search-box');
@@ -9,7 +9,6 @@ searchbox.addEventListener('keypress', setQuery);
 function setQuery(evt) {
   if (evt.keyCode == 13) {
     getResults(searchbox.value);
-    console.log(searchbox.value);
   }
 }
 
@@ -21,7 +20,6 @@ function getResults (query) {
 }
 
 function displayResults (weather) {
-  console.log(weather);
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
